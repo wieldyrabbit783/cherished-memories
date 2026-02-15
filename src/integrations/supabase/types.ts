@@ -14,7 +14,128 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      contacts: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          message: string
+          name: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          message: string
+          name: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string
+          name?: string
+        }
+        Relationships: []
+      }
+      memorial_photos: {
+        Row: {
+          created_at: string
+          id: string
+          memorial_id: string
+          photo_url: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          memorial_id: string
+          photo_url: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          memorial_id?: string
+          photo_url?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "memorial_photos_memorial_id_fkey"
+            columns: ["memorial_id"]
+            isOneToOne: false
+            referencedRelation: "memorials"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      memorials: {
+        Row: {
+          biography: string
+          birth_date: string
+          cover_image_url: string | null
+          created_at: string
+          death_date: string
+          full_name: string
+          id: string
+          is_public: boolean
+          location: string
+          slug: string
+          tribute_message: string | null
+          updated_at: string
+          user_id: string
+          video_url: string | null
+        }
+        Insert: {
+          biography: string
+          birth_date: string
+          cover_image_url?: string | null
+          created_at?: string
+          death_date: string
+          full_name: string
+          id?: string
+          is_public?: boolean
+          location: string
+          slug: string
+          tribute_message?: string | null
+          updated_at?: string
+          user_id: string
+          video_url?: string | null
+        }
+        Update: {
+          biography?: string
+          birth_date?: string
+          cover_image_url?: string | null
+          created_at?: string
+          death_date?: string
+          full_name?: string
+          id?: string
+          is_public?: boolean
+          location?: string
+          slug?: string
+          tribute_message?: string | null
+          updated_at?: string
+          user_id?: string
+          video_url?: string | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          full_name: string
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          full_name?: string
+          id: string
+        }
+        Update: {
+          created_at?: string
+          full_name?: string
+          id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
