@@ -118,6 +118,87 @@ export type Database = {
         }
         Relationships: []
       }
+      orders: {
+        Row: {
+          created_at: string
+          custom_photo_url: string | null
+          custom_text: string | null
+          id: string
+          memorial_id: string | null
+          product_id: string | null
+          product_name: string
+          quantity: number
+          shipping_address: string | null
+          shipping_city: string | null
+          shipping_country: string | null
+          shipping_name: string | null
+          shipping_state: string | null
+          shipping_zip: string | null
+          status: string
+          total_price: number
+          unit_price: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          custom_photo_url?: string | null
+          custom_text?: string | null
+          id?: string
+          memorial_id?: string | null
+          product_id?: string | null
+          product_name: string
+          quantity?: number
+          shipping_address?: string | null
+          shipping_city?: string | null
+          shipping_country?: string | null
+          shipping_name?: string | null
+          shipping_state?: string | null
+          shipping_zip?: string | null
+          status?: string
+          total_price: number
+          unit_price: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          custom_photo_url?: string | null
+          custom_text?: string | null
+          id?: string
+          memorial_id?: string | null
+          product_id?: string | null
+          product_name?: string
+          quantity?: number
+          shipping_address?: string | null
+          shipping_city?: string | null
+          shipping_country?: string | null
+          shipping_name?: string | null
+          shipping_state?: string | null
+          shipping_zip?: string | null
+          status?: string
+          total_price?: number
+          unit_price?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "orders_memorial_id_fkey"
+            columns: ["memorial_id"]
+            isOneToOne: false
+            referencedRelation: "memorials"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "orders_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "store_products"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           created_at: string
@@ -133,6 +214,39 @@ export type Database = {
           created_at?: string
           full_name?: string
           id?: string
+        }
+        Relationships: []
+      }
+      store_products: {
+        Row: {
+          base_price: number
+          category: string
+          created_at: string
+          description: string
+          id: string
+          image_url: string | null
+          is_active: boolean
+          name: string
+        }
+        Insert: {
+          base_price: number
+          category: string
+          created_at?: string
+          description: string
+          id?: string
+          image_url?: string | null
+          is_active?: boolean
+          name: string
+        }
+        Update: {
+          base_price?: number
+          category?: string
+          created_at?: string
+          description?: string
+          id?: string
+          image_url?: string | null
+          is_active?: boolean
+          name?: string
         }
         Relationships: []
       }

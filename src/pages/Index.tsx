@@ -75,6 +75,19 @@ const Index = () => (
       </div>
     </section>
 
+    {/* Store CTA */}
+    <section className="py-20">
+      <div className="container text-center">
+        <h2 className="font-heading text-3xl font-semibold">Keep Their Memory Close</h2>
+        <p className="mx-auto mt-3 max-w-md text-muted-foreground">
+          Turn cherished photos into beautiful keepsakes — T-shirts, mugs, framed prints, and more.
+        </p>
+        <Button size="lg" variant="outline" asChild className="mt-8 px-10 text-base">
+          <Link to="/store">Shop Memorial Keepsakes</Link>
+        </Button>
+      </div>
+    </section>
+
     {/* CTA */}
     <section className="py-20">
       <div className="container text-center">

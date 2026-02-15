@@ -28,6 +28,7 @@ const Navbar = () => {
           <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Home</Link>
           <Link to="/pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Pricing</Link>
           <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About</Link>
+          <Link to="/store" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Store</Link>
           <Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</Link>
           {user ? (
             <>
@@ -56,6 +57,7 @@ const Navbar = () => {
             <Link to="/" onClick={close} className="text-sm py-2">Home</Link>
             <Link to="/pricing" onClick={close} className="text-sm py-2">Pricing</Link>
             <Link to="/about" onClick={close} className="text-sm py-2">About</Link>
+            <Link to="/store" onClick={close} className="text-sm py-2">Store</Link>
             <Link to="/contact" onClick={close} className="text-sm py-2">Contact</Link>
             {user ? (
               <>
