@@ -1,12 +1,18 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Heart, Shield, Globe } from 'lucide-react';
+import heroCandles from '@/assets/hero-candles.jpg';
 
 const Index = () => (
   <div>
     {/* Hero */}
-    <section className="relative overflow-hidden py-24 lg:py-36" style={{ background: 'var(--hero-gradient)' }}>
-      <div className="container text-center">
+    <section className="relative overflow-hidden py-24 lg:py-36">
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroCandles})` }}
+      />
+      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
+      <div className="container relative text-center">
         <h1 className="mx-auto max-w-3xl font-heading text-4xl font-bold leading-tight text-foreground sm:text-5xl lg:text-6xl animate-fade-in">
           Honor Their Memory,{' '}
           <span className="text-primary">Forever</span>
