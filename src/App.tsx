@@ -21,6 +21,8 @@ import CreateMemorial from "./pages/CreateMemorial";
 import EditMemorial from "./pages/EditMemorial";
 import MemorialPage from "./pages/MemorialPage";
 import Settings from "./pages/Settings";
+import Store from "./pages/Store";
+import CustomizeProduct from "./pages/CustomizeProduct";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -44,6 +46,8 @@ const App = () => (
               <Route path="/signup" element={<Signup />} />
               <Route path="/forgot-password" element={<ForgotPassword />} />
               <Route path="/memorial/:slug" element={<MemorialPage />} />
+              <Route path="/store" element={<Store />} />
+              <Route path="/store/customize/:productId" element={<ProtectedRoute><CustomizeProduct /></ProtectedRoute>} />
               <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
               <Route path="/create-memorial" element={<ProtectedRoute><CreateMemorial /></ProtectedRoute>} />
               <Route path="/edit-memorial/:id" element={<ProtectedRoute><EditMemorial /></ProtectedRoute>} />
